@@ -21,3 +21,12 @@ scientific literature that results from use of any part of ipole:
 ipole-lic is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+
+
+How to use the code?
+make
+./lic ipole.dat
+three new images in ppm forma will be created
+ipole_fnu.ppm - image of Stokes I in linear (or other) scale
+ipole_lfnu.ppm - image of Stokes I in logarithmic scale
+ipole_lic.ppm - lic image
