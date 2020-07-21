@@ -1,1 +1,1 @@
-ART project based on ipole
+LIC visualization of polarization vectors on ipole images.
