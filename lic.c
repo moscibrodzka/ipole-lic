@@ -23,17 +23,16 @@ double stopx=FOV/2.;
 double starty=-FOV/2.;
 double stopy=FOV/2.;
 
-void main(){
-
+int main(int argc, char *argv[]){
+    
     FILE *fp;
     int i, j;    
-    char* fname = "ipole.dat";
+    char* fname;
     double dum_dbl;
     int dum_int;
     double freq=230.e9;
-    
-    fprintf(stdout,"%s\n", fname);
-    fp = fopen(fname, "r");
+
+    fp = fopen(argv[1], "r");
     if (fp == NULL) {
     	fprintf(stderr, "unable to open %s\n", fname);
     	exit(1);
@@ -43,23 +42,24 @@ void main(){
     	for (j = 0; j < NY; j++) {
     	    fscanf(fp, "%d %d %lf %lf %lf %lf %lf %lf\n",
 	    	    &dum_int, &dum_int, &dum_dbl,&imageS[i][j][0],&imageS[i][j][1],&imageS[i][j][2],&imageS[i][j][3],&dum_dbl);
-//	    fscanf(fp, "%d %d %lf %lf %lf %lf %lf \n",
-//		   &dum_int, &dum_int, &dum_dbl,&imageS[i][j][0],&imageS[i][j][1],&imageS[i][j][2],&imageS[i][j][3]);
     	}
     	fscanf(fp,"\n");
     }
     fclose(fp);
+    fprintf(stdout,"read %s \n",argv[1]);
     
     for (int i = 0; i < NX; i++)
         for (int j = 0; j < NY; j++)
 	    image[i][j] = pow(imageS[i][j][0],0.2);
     make_ppm(image, freq, "ipole_fnu.ppm");
-
+    fprintf(stdout,"made ipole_fnu.ppm \n");
+    
     for (int i = 0; i < NX; i++)
         for (int j = 0; j < NY; j++)
             image[i][j] = log(imageS[i][j][0] + 1.e-50);
     make_ppm(image, freq, "ipole_lfnu.ppm");
-
+    fprintf(stdout,"made ipole_lfnu.ppm \n");
+    
     //in [uas]
     for (int i = 0; i < NX; i++){
 	x[i]=-FOV/2. + (i+0.5)*dx;
@@ -86,7 +86,7 @@ void main(){
 
     // define length scale on the files L in uas
     // we do not integrate further
-    double L=3;//10.;//80.; //uas//we want this in units of pixels
+    double L=10.;//3;//10.;//80.; //uas//we want this in units of pixels
     double dl=0.1; //stepsize in uas in x and y
     double dlxy=sqrt(2.)*dl;
     
@@ -138,15 +138,16 @@ void main(){
 //	    if(LP > 0.5){
 //		image[i][j]=log(imageS[i][j][0]+1e-50);
 //	    }
-	    if (j==0) fprintf(stderr,"%d ",i);
+//	    if (j==0) fprintf(stderr,"%d ",i);
 	    
 	    
 	}
     }
-    fprintf(stderr,"\n");
+//    fprintf(stderr,"\n");
     
-    fprintf(stderr,"done\n");
+//    fprintf(stderr,"done\n");
     make_ppm(image, freq, "ipole_lic.ppm");
+    fprintf(stdout,"made ipole_lic.ppm \n");
 
     
     fp = fopen("ipole2.dat", "w");
