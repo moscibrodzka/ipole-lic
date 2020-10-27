@@ -38,7 +38,7 @@ int main(int argc, char *argv[]){
     	exit(1);
     }
 
-    //ignore 9 lines in header file
+    //ignore 9 lines in the file header 
     char ignore[1024];
     for (i=0;i<10;i++) fgets(ignore, sizeof(ignore), fp);
     
