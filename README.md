@@ -10,11 +10,14 @@ Instruction to make a LIC map:
 
 2. in decs.h
    set resolution of the image (res: 256x256 is prefered)
+   
    set FOV (160 muas by default)
-   chose color
+   
+   choose color scale of the output ppm files
         #define RAINBOW 1
         #define AFMHOT 0
         #define BW 0
+
 
 3. compile program typing: make
 
