@@ -96,7 +96,7 @@ int main(int argc, char *argv[]){
 
     
 
-    //paratmers below are fixed
+    //parameters below are fixed
 
     double dl=0.01; //stepsize in uas in x and y
     double dlxy=sqrt(2.)*dl;
