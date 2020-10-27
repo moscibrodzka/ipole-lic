@@ -28,7 +28,7 @@ Instruction to make a LIC map:
 
 4. run: ./lic file_w_image.txt
 
-5. program will produce 3 images in ppm format
+5. program will produce 2 images in ppm format
 
    image_fnu.ppm - total intensity map
       
