@@ -26,12 +26,10 @@ Instruction to make a LIC map:
 
 3. compile program typing: make
 
-4. run: ./lic file_w_image.dat
+4. run: ./lic file_w_image.txt
 
 5. program will produce 3 images in ppm format
 
    image_fnu.ppm - total intensity map
-   
-   image_lfnu.ppm - total intensity map in log scale
-   
+      
    image_lic.ppm - LIC map
