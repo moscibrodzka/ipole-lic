@@ -1,21 +1,26 @@
-LIC visualization of polarization vectors on ipole images.
+# Line Integral Convolution by Cabral 1993.
+# written by Monika Moscibrodzka
+# w/ some functions are borrowed from ipole (Moscibrodzka and Gammie 2018, Noble et et. 2007)
 
-Copyright 2020 Monika Moscibrodzka 
+Instruction to make a LIC map:
 
-ipole-lic  version 1.0  (released July, 2020)
+1. convert fits file with image into ASCII file .dat (i,j,I,Q,U,V)
 
-The files in this directory are part of ipole code. 
+   python script using ehtim provided, here one can also blur the image
 
-How to use the code?
+2. in decs.h
+   set resolution of the image (res: 256x256 is prefered)
+   set FOV (160 muas by default)
+   chose color
+        #define RAINBOW 1
+        #define AFMHOT 0
+        #define BW 0
 
-make
+3. compile program typing: make
 
-./lic ipole.dat
+4. run: ./lic file_w_image.dat
 
-three new images in ppm forma will be created:
-
-ipole_fnu.ppm - image of Stokes I in linear (or other) scale
-
-ipole_lfnu.ppm - image of Stokes I in logarithmic scale
-
-ipole_lic.ppm - lic image
+5. program will produce 3 images in ppm format
+   image_fnu.ppm - total intensity map
+   image_lfnu.ppm - total intensity map in log scale
+   image_lic.ppm - LIC map
