@@ -1,6 +1,6 @@
-# Line Integral Convolution by Cabral 1993.
-# written by Monika Moscibrodzka
-# w/ some functions are borrowed from ipole (Moscibrodzka and Gammie 2018, Noble et et. 2007)
+Line Integral Convolution by Cabral 1993.
+written by Monika Moscibrodzka
+w/ some functions are borrowed from ipole (Moscibrodzka and Gammie 2018, Noble et et. 2007)
 
 Instruction to make a LIC map:
 
