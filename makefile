@@ -1,6 +1,3 @@
-#
-# h5cc compiles for linking with HDF5 library
-#
 CC = gcc
 CFLAGS =  -fopenmp -I/usr/include -O3
 LDFLAGS = -lm 
