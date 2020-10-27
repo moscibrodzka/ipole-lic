@@ -79,11 +79,11 @@ int main(int argc, char *argv[]){
 	    vy[i][j] = ( cos(ang)*amp);
 	    image[i][j]=0.0; 
 	    
-	    //here one has many options for the background intensity, now set to ~P
+	    //here one has many options for the background intensity, now set to ~P^2
 //	    imageI[i][j]=rand();// uniform 
 //	    imageI[i][j]=imageS[i][j][0]*rand(); // brightness ~ I
-	    imageI[i][j]=(imageS[i][j][1]*imageS[i][j][1]+imageS[i][j][2]*imageS[i][j][2])*rand(); // ~P
-//	    imageI[i][j]=sqrt(imageS[i][j][1]*imageS[i][j][1]+imageS[i][j][2]*imageS[i][j][2])*rand();// ~sqrt(P)
+	    imageI[i][j]=(imageS[i][j][1]*imageS[i][j][1]+imageS[i][j][2]*imageS[i][j][2])*rand(); // ~P^2
+//	    imageI[i][j]=sqrt(imageS[i][j][1]*imageS[i][j][1]+imageS[i][j][2]*imageS[i][j][2])*rand();// ~P
 //	    imageI[i][j]=rand()*pow(imageS[i][j][0],0.1); //some power of I
 
 	}
