@@ -92,7 +92,7 @@ int main(int argc, char *argv[]){
     
 
     // define length scale on the files L in uas to integrate over
-    double L=20.;//4.;//3;//10.;//80.; //uas  //parameter, the larger the number the smoother images
+    double L=10.;//4.;//3;//10.;//80.; //uas  //parameter, the larger the number the smoother images
 
     
 
